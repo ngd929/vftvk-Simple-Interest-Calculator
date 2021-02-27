@@ -1,16 +1,77 @@
+<!DOCTYPE html>
 <html>
-    <head>
+<head>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Simple Interest Calculator</h1>
+</head>
+<div class="main">
+    <div class="header">
+      <h1>Simple Interest Calculator</h1>
+    </div>
+  
+  
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-15">
+        <label for="amount">Amount</label>
+      </div>
+      <div class="col-45">
+        <input type="text" id="principal" name="principal" placeholder="Enter a principal amount...">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-15">
+        <label for="rate">Interest Rate</label>
+      </div>
+      <div class="col-45">
+        <input 
+               id="rate" 
+               type="range" 
+               min="1" 
+               max="20"
+               step="0.25" 
+               value="10.25"
+               onchange="detectChange(this.value)"
+               class="slider"/>
+        <!-- <span id="output">10.25 %</span> -->
+        <span><output id="output">10.25 %</output></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-15">
+        <label for="years">No. of Years</label>
+      </div>
+      <div class="col-45">
+        <select id="years" name="years">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-15">
+            <button onclick="compute()">Compute Interest</button>
+          </div>
+          <div class="col-45">
+            <span id="result"></span>
+          </div>
+    </div>
+    <div class="footer">
+    <p>&copy; Everyone Can Get Rich<p>
+    </div>
+  </div>
+  
+  </div>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
-    </body>
+</body>
 </html>
